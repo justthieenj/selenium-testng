@@ -2,7 +2,7 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import utils.DriverUtils;
+import common.DriverUtils;
 
 public class GoogleTest extends BaseTest {
     @Test

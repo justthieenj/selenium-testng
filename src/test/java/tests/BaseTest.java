@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import utils.DriverUtils;
+import common.DriverUtils;
 
 /**
  * use TestNG hooks to set up and teardown test

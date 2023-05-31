@@ -3,8 +3,7 @@ package common;
 import org.openqa.selenium.WebDriver;
 
 public class DriverUtils {
-    //    private static WebDriver driver;
-    private static ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
+    private static final ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
         return DRIVERS.get();

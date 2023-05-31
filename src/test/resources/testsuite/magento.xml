@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="MagentoSuite" verbose="1">
+    <parameter name="dummyParams" value="lmao ez"/>
+    <test name="magento">
+        <classes>
+            <class name="tests.MagentoLoginTest"/>
+            <class name="tests.MagentoSearchProductTest"/>
+        </classes>
+    </test>
+</suite>

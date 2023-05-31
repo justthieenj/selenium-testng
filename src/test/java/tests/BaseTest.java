@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
 /**
@@ -24,6 +25,12 @@ public class BaseTest {
     @AfterClass
     public void afterClass() {
         System.out.println("AfterClass");
-        DriverUtils.getDriver().quit();
+        DriverUtils.getDriver().close();
+    }
+
+    @AfterSuite
+    public void afterSuite() {
+        System.out.println("AfterSuite");
+        DriverUtils.quitAll();
     }
 }

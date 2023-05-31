@@ -12,4 +12,8 @@ public class DriverUtils {
     public static void setDriver(WebDriver driver) {
         DriverUtils.driver = driver;
     }
+
+    public static void open(String url) {
+        driver.get(url);
+    }
 }

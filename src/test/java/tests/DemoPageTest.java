@@ -11,14 +11,13 @@ import java.time.Duration;
 public class DemoPageTest extends BaseTest {
     @Test
     public void testElementInteraction() {
-        var driver = DriverUtils.getDriver();
-        driver.get("https://seleniumbase.io/demo_page");
-        BaseElement textInput = new BaseElementImpl("#myTextInput321");
+        DriverUtils.open("https://seleniumbase.io/demo_page");
+        BaseElement textInput = new BaseElementImpl("#myTextInput321"); // invalid selector
         BaseElement preFilledTextInput = new BaseElementImpl("#myTextInput2");
         BaseElement placeholderText = new BaseElementImpl("#placeholderText");
         BaseElement dropdown = new BaseElementImpl("#mySelect");
         var result = textInput.isVisible(Duration.ofSeconds(2));
-        System.out.println(result);
+        System.out.println(result); // should be false
 //        textInput.enter("Hello World");
         preFilledTextInput.clear();
         preFilledTextInput.enter("CSGO");

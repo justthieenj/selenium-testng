@@ -8,14 +8,16 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
+import static element.ElementUtils.find;
+
 public class DemoPageTest extends BaseTest {
     @Test
     public void testElementInteraction() {
         DriverUtils.open("https://seleniumbase.io/demo_page");
-        BaseElement textInput = new BaseElementImpl("#myTextInput321"); // invalid selector
-        BaseElement preFilledTextInput = new BaseElementImpl("#myTextInput2");
-        BaseElement placeholderText = new BaseElementImpl("#placeholderText");
-        BaseElement dropdown = new BaseElementImpl("#mySelect");
+        var textInput = find("#myTextInput321"); // invalid selector
+        var preFilledTextInput = find("#myTextInput2");
+        var placeholderText = find("#placeholderText");
+        var dropdown = find("#mySelect");
         var result = textInput.isVisible(Duration.ofSeconds(2));
         System.out.println(result); // should be false
 //        textInput.enter("Hello World");

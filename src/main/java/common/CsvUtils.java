@@ -8,6 +8,7 @@ import data.TestCase;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -15,13 +16,12 @@ public class CsvUtils {
     private static Collection<TestCase> testCases;
 
     private static List<Column> getColumns() {
-        return List.of(
-                new Column(0, "id"),
-                new Column(1, "title"),
-                new Column(2, "priority"),
-                new Column(3, "status"),
-                new Column(4, "steps")
-        );
+        var testCaseProps = ReflectUtils.getAllPropertiesInClass(TestCase.class);
+        List<Column> columns = new ArrayList<>();
+        for (int i = 0; i < testCaseProps.size(); i++) {
+            columns.add(new Column(i, testCaseProps.get(i)));
+        }
+        return columns;
     }
 
     private static Collection<TestCase> readTestCaseFile() {

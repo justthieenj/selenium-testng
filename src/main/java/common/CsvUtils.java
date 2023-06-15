@@ -3,21 +3,32 @@ package common;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import com.fasterxml.jackson.dataformat.csv.CsvSchema.Column;
 import data.TestCase;
-import enums.CsvTestCaseCol;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
 
 public class CsvUtils {
     private static Collection<TestCase> testCases;
 
+    private static List<Column> getColumns() {
+        return List.of(
+                new Column(0, "id"),
+                new Column(1, "title"),
+                new Column(2, "priority"),
+                new Column(3, "status"),
+                new Column(4, "steps")
+        );
+    }
+
     private static Collection<TestCase> readTestCaseFile() {
         try {
             var csvFile = new FileInputStream("src/test/resources/data/testcase.csv");
-            CsvSchema schema = CsvSchema.builder()
-                    .addColumns(CsvTestCaseCol.getColumns())
+            var schema = CsvSchema.builder()
+                    .addColumns(getColumns())
                     .setSkipFirstDataRow(true)
                     .setNullValue("")
                     .build();

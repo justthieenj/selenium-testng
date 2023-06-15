@@ -42,6 +42,11 @@ public class BaseElementImpl implements BaseElement {
         return driver.findElements(byLocator);
     }
 
+    /**
+     * Custom wait to ignore some exceptions
+     *
+     * @return FluentWait
+     */
     private FluentWait<WebDriver> getCustomWait(Duration timeout) {
         return new WebDriverWait(driver, timeout)
                 .pollingEvery(Duration.ofMillis(100))

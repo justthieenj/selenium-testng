@@ -26,4 +26,5 @@ public interface BaseElement {
     boolean isEnabled(Duration timeout);
 
     String getText();
+    void scroll();
 }

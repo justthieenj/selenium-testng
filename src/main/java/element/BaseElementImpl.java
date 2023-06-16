@@ -4,6 +4,7 @@ import common.Constant;
 import common.DriverUtils;
 import enums.Attribute;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
@@ -129,5 +130,13 @@ public class BaseElementImpl implements BaseElement {
     @Override
     public boolean isEnabled(Duration timeout) {
         return getElement().isEnabled();
+    }
+
+    @Override
+    public void scroll() {
+        new Actions(driver)
+                .moveToElement(getElement())
+                .build()
+                .perform();
     }
 }

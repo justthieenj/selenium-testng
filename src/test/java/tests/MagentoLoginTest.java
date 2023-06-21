@@ -18,6 +18,6 @@ public class MagentoLoginTest extends BaseTest {
         HomePage homePage = new HomePage();
         homePage.clickLogin();
         LoginPage loginPage = new LoginPage();
-        loginPage.login("ngkhanhthien94@gmail.com", "UqHtkEV8KgxCb78");
+        loginPage.loginAs("ngkhanhthien94@gmail.com", "UqHtkEV8KgxCb78");
     }
 }

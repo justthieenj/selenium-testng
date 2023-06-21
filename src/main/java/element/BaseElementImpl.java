@@ -118,6 +118,11 @@ public class BaseElementImpl implements BaseElement {
     }
 
     @Override
+    public boolean isVisible() {
+        return isVisible(Constant.SHORT_TIMEOUT);
+    }
+
+    @Override
     public boolean isVisible(Duration timeout) {
         try {
             waitVisible(timeout);

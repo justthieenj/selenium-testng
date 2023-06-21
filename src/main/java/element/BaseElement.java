@@ -20,6 +20,7 @@ public interface BaseElement {
     String getAttribute(Attribute attributeName);
 
     String getValue();
+    boolean isVisible();
 
     boolean isVisible(Duration timeout);
 

@@ -19,6 +19,8 @@ public class MagentoSearchProductTest extends BaseTest {
                 .clickLogin()
                 .loginAs("ngkhanhthien94@gmail.com", "UqHtkEV8KgxCb78")
                 .searchFor("t shirt")
-                .productCardShouldDisplayed();
+                .productCardShouldDisplayed()
+                .clickFirstProduct()
+                .productTitleShouldDisplayed();
     }
 }

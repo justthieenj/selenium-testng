@@ -8,10 +8,14 @@ public class LoginPage {
     private final BaseElement txtPassword = new BaseElementImpl("#pass");
     private final BaseElement btnLogin = new BaseElementImpl("button.login");
 
+    private HomePage clickLogin() {
+        btnLogin.click();
+        return new HomePage();
+    }
+
     public HomePage loginAs(String username, String password) {
         txtUsername.enter(username);
         txtPassword.enter(password);
-        btnLogin.click();
-        return new HomePage();
+        return clickLogin();
     }
 }

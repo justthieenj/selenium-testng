@@ -11,9 +11,8 @@ public class JsonUtils {
         Collection<T> collection;
         try {
             ObjectMapper mapper = new ObjectMapper();
-            String filePath = new File(relativePath).getAbsolutePath();
             JavaType typeOfT = mapper.getTypeFactory().constructCollectionType(Collection.class, clazz);
-            collection = mapper.readValue(new File(filePath), typeOfT);
+            collection = mapper.readValue(new File(relativePath), typeOfT);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

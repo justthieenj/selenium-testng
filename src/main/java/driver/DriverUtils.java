@@ -1,5 +1,6 @@
 package driver;
 
+import common.ReflectUtils;
 import org.openqa.selenium.WebDriver;
 
 public class DriverUtils {
@@ -12,6 +13,10 @@ public class DriverUtils {
             case "edge" -> new Edge().createDriver(options);
             default -> throw new IllegalArgumentException("Browser " + browser + " is not supported");
         };
+    }
+
+    public static WebDriver initByReflection(String browser, String options) {
+        return ReflectUtils.createWebDriver(browser, options);
     }
 
     public static WebDriver getDriver() {

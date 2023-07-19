@@ -1,9 +1,18 @@
-package common;
+package driver;
 
 import org.openqa.selenium.WebDriver;
 
 public class DriverUtils {
     private static final ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
+
+    public static WebDriver initDriver(String browser, String options) {
+        return switch (browser) {
+            case "chrome" -> new Chrome().createDriver(options);
+            case "firefox" -> new Firefox().createDriver(options);
+            case "edge" -> new Edge().createDriver(options);
+            default -> throw new IllegalArgumentException("Browser " + browser + " is not supported");
+        };
+    }
 
     public static WebDriver getDriver() {
         return DRIVERS.get();

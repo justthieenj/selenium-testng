@@ -1,6 +1,6 @@
 package tests;
 
-import common.DriverUtils;
+import driver.DriverUtils;
 import element.BaseElementImpl;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;

@@ -1,6 +1,6 @@
 package tests;
 
-import common.DriverUtils;
+import driver.DriverUtils;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import page.HomePage;

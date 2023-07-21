@@ -1,7 +1,7 @@
 package tests;
 
 import common.Common;
-import common.DriverUtils;
+import driver.DriverUtils;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
